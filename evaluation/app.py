@@ -45,27 +45,33 @@ def clean_text(text):
 
 
 
-def evaluate(description: str, resumes: dict, model,skills: list) -> dict:
+def evaluate(description: str, resumes: dict, model, skills: list) -> list:
     description_vector = model.encode(description, convert_to_tensor=True)
-    results = {}
+    resume_data = []
 
     for name, resume in resumes.items():
         res_vector = model.encode(resume, convert_to_tensor=True)
         sim_score = util.pytorch_cos_sim(description_vector, res_vector)[0][0].item()
-        
+
         skill_present = {
-            skill : (skill.lower() in resume.lower() )
-            for skill in skills
+            skill: (skill in resume.lower()) for skill in skills
         }
 
-        results[name] = {
+        skill_count = sum(skill_present.values())
+
+        resume_data.append({
+            "filename": name,
             "score": round(sim_score, 4),
+            "skill_count": skill_count,
             "skills": skill_present
-        }
+        })
 
-    
-    sorted_results = dict(sorted(results.items(), key=lambda item: item[1]['score']))
-    return sorted_results
+    sorted_by_score = sorted(resume_data, key=lambda x: x["score"], reverse=True)
+
+   
+    return sorted_by_score[:5]
+
+
 
 
 @app.route('/scan', methods=['POST'])
