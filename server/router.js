@@ -65,7 +65,7 @@ const upload = multer({
 
 const FormData = require('form-data')
 
-router.post('/upload', upload.array('files'), async (req, res) => {
+router.post('/scan', upload.array('files'), async (req, res) => {
   const { job_description, skills } = req.body
 
   if (!req.files || req.files.length === 0) {
@@ -88,7 +88,7 @@ router.post('/upload', upload.array('files'), async (req, res) => {
     formData.append('skills', skills)
 
     const flaskResponse = await axios.post(
-      'http://127.0.0.1:5000/upload',
+      'http://127.0.0.1:5000/api/scan',
       formData,
       {
         headers: formData.getHeaders(),

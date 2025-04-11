@@ -74,7 +74,7 @@ def evaluate(description: str, resumes: dict, model, skills: list) -> list:
 
 
 
-@app.route('/scan', methods=['POST'])
+@app.route('/api/scan', methods=['POST'])
 def upload_files():
 
     name_job_description = request.form.get('job_description')
