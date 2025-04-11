@@ -1,0 +1,91 @@
+.contact-page {
+    padding: 40px 20px;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .dropdown-section {
+    margin-bottom: 20px;
+  }
+  
+  select {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: var(--card-bg, #fff);
+  }
+  
+  .contact-details {
+    background-color: var(--card-bg, #f9f9f9);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-details p {
+    margin: 10px 0;
+  }
+  
+  .contact-details a {
+    color: var(--primary-color, #00cfff);
+    text-decoration: none;
+  }
+  
+  .footer {
+    margin-top: 40px;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd;
+  }
+  .contact-form {
+    margin-top: 30px;
+    text-align: left;
+    background-color: var(--card-bg, #fff);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  }
+  
+  .contact-form h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .contact-form button {
+    background-color: var(--primary-color, #007bff);
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .contact-form button:hover {
+    background-color: #0056b3;
+  }
+.contact-form .dropdown-section{
+    display: flexp
+
+
+}    
