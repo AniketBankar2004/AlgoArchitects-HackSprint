@@ -1,0 +1,5 @@
+Flask==2.2.5
+sentence-transformers==2.2.2
+torch==2.0.1
+PyMuPDF==1.22.3
+python-docx==0.8.11
